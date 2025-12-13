@@ -1,0 +1,130 @@
+/* About Page Styles */
+
+.about {
+  padding-top: 80px; /* Account for fixed navbar */
+}
+
+.about-hero {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: var(--white);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--light-blue);
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-block {
+  background-color: var(--white);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-block p {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.8;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+.content-block p:last-child {
+  margin-bottom: 0;
+}
+
+.vision-mission-section {
+  background-color: var(--light-gray);
+}
+
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.vision-mission-card {
+  background-color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vision-mission-card h2 {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-sm);
+}
+
+.vision-mission-card p {
+  line-height: 1.8;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+.values-section {
+  background-color: var(--white);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.value-item {
+  background-color: var(--light-gray);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  border-left: 4px solid var(--secondary-blue);
+  transition: var(--transition);
+}
+
+.value-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.value-item h3 {
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-xs);
+}
+
+.value-item p {
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

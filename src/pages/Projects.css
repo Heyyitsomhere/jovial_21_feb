@@ -1,0 +1,143 @@
+/* Projects Page Styles */
+
+.projects {
+  padding-top: 80px;
+}
+
+.projects-hero {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: var(--white);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.projects-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.projects-hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--light-blue);
+}
+
+.projects-intro {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.projects-gallery-section {
+  background-color: var(--light-gray);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.project-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.project-info {
+  padding: var(--spacing-md);
+}
+
+.project-info h3 {
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-sm);
+}
+
+.project-details p {
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.project-details strong {
+  color: var(--text-dark);
+  margin-right: 0.5rem;
+}
+
+.stats-section {
+  background-color: var(--white);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.stat-item {
+  padding: var(--spacing-md);
+}
+
+.stat-item h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-hero h1 {
+    font-size: 2rem;
+  }
+
+  .projects-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item h2 {
+    font-size: 2rem;
+  }
+}
+

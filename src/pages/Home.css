@@ -1,0 +1,526 @@
+/* Home Page Styles */
+
+.home {
+  padding-top: 0; /* No padding needed - hero starts at top, navbar is fixed over it */
+}
+
+/* Hero Section with Slider */
+.hero {
+  position: relative;
+  color: var(--white);
+  padding: var(--spacing-xl) 0;
+  min-height: 100vh; /* Full viewport height for impact */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* Prevent overflow during transitions */
+}
+
+/* Background image container for slider */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover; /* Cover entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax effect on scroll */
+  /* Smooth fade transition between slides */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+/* Active slide is fully visible */
+.hero-background.active {
+  opacity: 1;
+}
+
+/* Dark gradient overlay for text readability - different tones per slide */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: background 1s ease-in-out;
+}
+
+/* Different overlay tones for each slide */
+
+
+
+
+
+
+/* Hero content positioned above overlay */
+.hero-content {
+  position: relative;
+  z-index: 2; /* Above overlay */
+  max-width: 800px;
+  padding: 0 var(--spacing-sm);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+  color: var(--white); /* Bold white heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+}
+
+.hero-tagline {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--light-blue);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--white);
+  color: var(--primary-blue);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--light-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-link {
+  color: var(--secondary-blue);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-link:hover {
+  color: var(--primary-blue);
+  padding-left: 5px;
+}
+
+/* Services Section with Background */
+.services-section {
+  background-color: var(--light-gray);
+  /* Optional: Add subtle background image for visual richness */
+  background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Light overlay for services section */
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(243, 244, 246, 0.95); /* Light gray with slight transparency */
+  z-index: 0;
+}
+
+.services-section .container {
+  position: relative;
+  z-index: 1; /* Content above overlay */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.service-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  overflow: hidden; /* For image to fit nicely */
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Service card images - professional icons/placeholders */
+.service-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Individual service images - using royalty-free placeholders */
+/* Replace these URLs with your actual service images */
+.stp-image {
+  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+}
+
+.etp-image {
+  background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+}
+
+.wtp-image {
+  background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+}
+
+.ro-image {
+  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+}
+
+.service-content {
+  padding: var(--spacing-md);
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-content h3 {
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-content p {
+  color: var(--text-light);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
+  flex: 1; /* Push button to bottom */
+}
+
+/* Why Choose Us Section with Background */
+.why-choose-section {
+  background-color: var(--white);
+  /* Optional subtle background for visual interest */
+  background-image: linear-gradient(
+    to bottom,
+    var(--white) 0%,
+    var(--light-gray) 100%
+  );
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.feature-item {
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--light-blue);
+  color: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto var(--spacing-sm);
+}
+
+.feature-item h3 {
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-xs);
+}
+
+.feature-item p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Industries Section with Background */
+.industries-section {
+  background-color: var(--light-gray);
+  /* Optional background image for visual richness */
+  background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Light overlay for industries section */
+.industries-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(243, 244, 246, 0.92);
+  z-index: 0;
+}
+
+.industries-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+.industry-item {
+  background-color: var(--white);
+  padding: var(--spacing-md);
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: var(--transition);
+  border: 2px solid var(--border-color);
+}
+
+.industry-item:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+/* Projects Preview Section */
+.projects-preview-section {
+  background-color: var(--white);
+  background-image: linear-gradient(
+    to bottom,
+    var(--light-gray) 0%,
+    var(--white) 100%
+  );
+}
+
+.projects-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.project-preview-card {
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.project-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 200px;
+  /* Use actual project images - placeholder for now */
+  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: relative;
+}
+
+/* Dark overlay on project images for text readability */
+.project-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 58, 138, 0.7),
+    rgba(59, 130, 246, 0.7)
+  );
+  z-index: 1;
+}
+
+.project-image-placeholder span {
+  position: relative;
+  z-index: 2; /* Text above overlay */
+}
+
+.project-preview-card h3 {
+  padding: var(--spacing-sm);
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+}
+
+.project-preview-card p {
+  padding: 0 var(--spacing-sm) var(--spacing-sm);
+  color: var(--text-light);
+}
+
+/* Hero Slider Indicators (Dots) - Right Side */
+.hero-indicators {
+  position: absolute;
+  right: 2rem; /* Position on the right side */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3; /* Above overlay and content */
+  display: flex;
+  flex-direction: column; /* Vertical layout */
+  gap: 1rem; /* Space between dots */
+}
+
+/* Individual dot/indicator */
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  /* Remove default button styles */
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Active dot - highlighted state */
+.hero-dot.active {
+  background-color: var(--white);
+  border-color: var(--white);
+  transform: scale(1.2); /* Slightly larger when active */
+}
+
+/* Hover effect on dots */
+.hero-dot:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Hero adjustments for mobile */
+  .hero {
+    min-height: 80vh; /* Slightly shorter on mobile */
+    background-attachment: scroll; /* Remove parallax on mobile for performance */
+    padding: var(--spacing-lg) 0;
+  }
+
+  /* Remove parallax on mobile for performance */
+  .hero-background {
+    background-attachment: scroll;
+  }
+
+  /* Adjust indicator position for mobile */
+  .hero-indicators {
+    right: 1rem; /* Closer to edge on mobile */
+    gap: 0.75rem; /* Slightly smaller gap */
+  }
+
+  .hero-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  /* Services section adjustments */
+  .services-section {
+    background-attachment: scroll; /* Remove fixed background on mobile */
+  }
+
+  .services-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-image {
+    height: 180px; /* Slightly smaller on mobile */
+  }
+
+  /* Industries section */
+  .industries-section {
+    background-attachment: scroll;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .projects-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image-placeholder {
+    height: 180px; /* Smaller on mobile */
+  }
+}
+
+/* Ensure no horizontal scrolling on any device */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  /* Smaller indicators on very small screens */
+  .hero-indicators {
+    right: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+    border-width: 1.5px;
+  }
+
+  .service-image {
+    height: 150px;
+  }
+}
+

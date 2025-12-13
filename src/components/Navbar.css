@@ -1,0 +1,285 @@
+/* Navbar Styles */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  /* Semi-transparent background on home page hero - allows hero image to show through */
+  padding: 1.5rem 0; /* Initial padding - will reduce when scrolled */
+  z-index: 1000;
+  /* Smooth transitions for all changes */
+  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar when scrolled - solid background, reduced padding, subtle shadow */
+.navbar-scrolled {
+  background-color: #0a0a0a85; /* Solid white background */
+  padding: 0.75rem 0; /* Reduced padding for more compact look */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Navbar on About page - solid background matching reference site style */
+.navbar-about {
+  background-color: var(--white); /* Solid white background like reference */
+  padding: 1rem 0; /* Professional height matching reference */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Subtle professional shadow */
+  backdrop-filter: none; /* Remove blur on solid background */
+}
+
+/* About page navbar - logo and links are dark from start */
+.navbar-about .navbar-logo {
+  color: var(--primary-blue); /* Dark blue logo on white background */
+}
+
+.navbar-about .navbar-menu a {
+  color: var(--text-dark); /* Dark text on white background */
+}
+
+.navbar-about .dropdown-toggle {
+  color: var(--text-dark); /* Dark text on white background */
+}
+
+.navbar-about .mobile-menu-toggle span {
+  background-color: var(--text-dark); /* Dark hamburger on white background */
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white); /* White text on transparent/semi-transparent background */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Logo color changes when navbar is scrolled */
+.navbar-scrolled .navbar-logo {
+  color: var(--primary-blue); /* Blue text on white background */
+}
+
+.logo-text {
+  white-space: nowrap;
+}
+
+/* Desktop Navigation Menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.navbar-menu li {
+  position: relative;
+}
+
+.navbar-menu a {
+  color: var(--white); /* White text on transparent background */
+  font-weight: 500;
+  padding: 0.5rem 1rem; /* Comfortable padding for clickable area */
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover transitions */
+  position: relative;
+}
+
+/* Menu links change color when navbar is scrolled */
+.navbar-scrolled .navbar-menu a {
+  color: var(--text-dark); /* Dark text on white background */
+}
+
+/* Hover and active states - professional B2B style */
+.navbar-menu a:hover,
+.navbar-menu a.active {
+  color: var(--secondary-blue); /* Blue accent color on hover */
+  background-color: rgba(59, 130, 246, 0.1); /* Light blue background on hover */
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  color: var(--white); /* White text on transparent background */
+  font-weight: 500;
+  padding: 0.5rem 1rem; /* Match regular menu item padding */
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Dropdown toggle color changes when navbar is scrolled */
+.navbar-scrolled .dropdown-toggle {
+  color: var(--text-dark); /* Dark text on white background */
+}
+
+.dropdown-toggle:hover {
+  color: var(--secondary-blue); /* Blue accent on hover */
+  background-color: rgba(59, 130, 246, 0.1); /* Light blue background */
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: var(--transition);
+}
+
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white);
+  list-style: none;
+  min-width: 180px;
+  padding: var(--spacing-xs) 0;
+  margin-top: var(--spacing-xs);
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: var(--spacing-sm);
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--light-blue);
+  color: var(--primary-blue);
+}
+
+/* Mobile Menu Toggle Button (Hamburger) */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: var(--spacing-xs);
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  transition: var(--transition);
+  border-radius: 2px;
+}
+
+.navbar-scrolled .mobile-menu-toggle span {
+  background-color: var(--text-dark);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  list-style: none;
+  background-color: var(--white);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-menu.open {
+  max-height: 500px;
+}
+
+.mobile-menu li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mobile-menu a {
+  display: block;
+  padding: var(--spacing-sm);
+  color: var(--text-dark);
+  font-weight: 500;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.mobile-menu a:hover {
+  background-color: var(--light-blue);
+  color: var(--primary-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none; /* Hide desktop menu on mobile */
+  }
+
+  .mobile-menu-toggle {
+    display: flex; /* Show hamburger button */
+  }
+
+  .mobile-menu {
+    display: block; /* Show mobile menu */
+  }
+
+  .navbar-logo {
+    font-size: 1.2rem; /* Slightly smaller logo on mobile */
+  }
+
+  /* Ensure no horizontal scroll on mobile */
+  .navbar-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1rem; /* Even smaller on very small screens */
+  }
+
+  /* Prevent horizontal scrolling */
+  .navbar {
+    overflow-x: hidden;
+  }
+}
+
