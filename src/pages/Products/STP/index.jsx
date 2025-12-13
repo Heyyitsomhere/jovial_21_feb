@@ -1,4 +1,4 @@
-import SolutionPage from './SolutionPage';
+import SolutionPage from '../SolutionPage';
 
 /**
  * STP (Sewage Treatment Plant) Page

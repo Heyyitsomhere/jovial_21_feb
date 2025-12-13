@@ -33,10 +33,13 @@ function Footer() {
               <Link to="/about">About Us</Link>
             </li>
             <li>
-              <Link to="/solutions">Solutions</Link>
+              <Link to="/products/sewage-treatment-plant">Our Products</Link>
             </li>
             <li>
-              <Link to="/projects">Projects</Link>
+              <Link to="/services/operations-maintenance">Services</Link>
+            </li>
+            <li>
+              <Link to="/career">Career</Link>
             </li>
             <li>
               <Link to="/contact">Contact</Link>
@@ -44,21 +47,21 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Solutions Section */}
+        {/* Products Section */}
         <div className="footer-section">
-          <h4>Our Solutions</h4>
+          <h4>Our Products</h4>
           <ul className="footer-links">
             <li>
-              <Link to="/solutions/stp">Sewage Treatment Plant</Link>
+              <Link to="/products/sewage-treatment-plant">Sewage Treatment Plant</Link>
             </li>
             <li>
-              <Link to="/solutions/etp">Effluent Treatment Plant</Link>
+              <Link to="/products/effluent-treatment-plant">Effluent Treatment Plant</Link>
             </li>
             <li>
-              <Link to="/solutions/wtp">Water Treatment Plant</Link>
+              <Link to="/products/ultra-filtration-system">Ultra Filtration System</Link>
             </li>
             <li>
-              <Link to="/solutions/ro">Reverse Osmosis</Link>
+              <Link to="/products/reverse-osmosis">Reverse Osmosis</Link>
             </li>
           </ul>
         </div>

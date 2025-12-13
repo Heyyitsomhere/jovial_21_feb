@@ -1,4 +1,4 @@
-import SolutionPage from './SolutionPage';
+import SolutionPage from '../SolutionPage';
 
 /**
  * RO (Reverse Osmosis) Page

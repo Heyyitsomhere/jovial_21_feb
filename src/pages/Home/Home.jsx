@@ -102,7 +102,7 @@ function Home() {
       {/* Key Services Section */}
       <section className="section services-section">
         <div className="container">
-          <h2 className="section-title">Our Key Services</h2>
+          <h2 className="section-title">Our Products</h2>
           <p className="section-subtitle">
             Comprehensive water and wastewater treatment solutions for all your needs
           </p>
@@ -115,7 +115,8 @@ function Home() {
                   Advanced STP systems for treating domestic and commercial sewage, 
                   ensuring compliance with environmental standards.
                 </p>
-                <Link to="/solutions/stp" className="btn-link">
+                
+                <Link to="products/sewage-treatment-plant" className="btn-link">
                   Learn More →
                 </Link>
               </div>
@@ -128,7 +129,7 @@ function Home() {
                   Customized ETP solutions for industrial wastewater treatment, 
                   designed to meet specific industry requirements.
                 </p>
-                <Link to="/solutions/etp" className="btn-link">
+                <Link to="products/effluent-treatment-plant" className="btn-link">
                   Learn More →
                 </Link>
               </div>
@@ -141,7 +142,7 @@ function Home() {
                   Complete water treatment solutions for potable water supply, 
                   ensuring safe and clean water for communities.
                 </p>
-                <Link to="/solutions/wtp" className="btn-link">
+                <Link to="/products/water-treatment-plant" className="btn-link">
                   Learn More →
                 </Link>
               </div>
@@ -154,7 +155,7 @@ function Home() {
                   High-quality RO systems for water purification, removing impurities 
                   and dissolved solids to produce pure water.
                 </p>
-                <Link to="/solutions/ro" className="btn-link">
+                <Link to="/products/reverse-osmosis" className="btn-link">
                   Learn More →
                 </Link>
               </div>

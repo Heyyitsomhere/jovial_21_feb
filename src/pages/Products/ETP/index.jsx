@@ -1,4 +1,4 @@
-import SolutionPage from './SolutionPage';
+import SolutionPage from '../SolutionPage';
 
 /**
  * ETP (Effluent Treatment Plant) Page
