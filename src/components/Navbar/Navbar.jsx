@@ -97,6 +97,9 @@ function Navbar() {
             </span>
             <ul className="dropdown-menu">
               <li>
+                <Link to="/products">All Products</Link>
+              </li>
+              <li>
                 <Link to="/products/sewage-treatment-plant">Sewage Treatment Plant</Link>
               </li>
               <li>
@@ -203,6 +206,9 @@ function Navbar() {
             <span className={`mobile-dropdown-arrow ${openMobileDropdown === 'products' ? 'open' : ''}`}>▼</span>
           </span>
           <ul className={`mobile-dropdown-menu ${openMobileDropdown === 'products' ? 'open' : ''}`}>
+            <li>
+              <Link to="/products">All Products</Link>
+            </li>
             <li>
               <Link to="/products/sewage-treatment-plant">Sewage Treatment Plant</Link>
             </li>

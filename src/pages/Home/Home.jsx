@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import wastewaterImg from '../../assets/wastewaterImg.jpg';
 import './Home.css';
+
+
 
 /**
  * Home Page Component
@@ -8,14 +11,15 @@ import './Home.css';
  * - Key services section (STP, ETP, WTP, RO)
  * - Why Choose Us section
  * - Industries We Serve section
- * - Projects preview section
+ * - Our Key Services section
  */
 function Home() {
   // Array of hero slides - each with image and title
   // Using royalty-free placeholder water/wastewater images - easy to replace later
   const heroSlides = [
     {
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      // image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      image: wastewaterImg,
       title: 'Wastewater Solutions'
     },
     {
@@ -161,6 +165,11 @@ function Home() {
               </div>
             </div>
           </div>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <Link to="/products" className="btn-primary">
+              View All Our Products
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -232,27 +241,37 @@ function Home() {
         </div>
       </section>
 
-      {/* Projects Preview Section */}
-      <section className="section projects-preview-section">
+      {/* Our Key Services Section */}
+      <section className="section key-services-section">
         <div className="container">
-          <h2 className="section-title">Our Recent Projects</h2>
+          <h2 className="section-title">Our Key Services</h2>
           <p className="section-subtitle">
-            Delivering successful water treatment solutions across India
+            Comprehensive support services for your water treatment systems
           </p>
-          <div className="projects-preview-grid">
-            {[1, 2, 3, 4, 5, 6].map((project) => (
-              <div key={project} className="project-preview-card">
-                <div className="project-image-placeholder">
-                  <span>Project {project}</span>
-                </div>
-                <h3>Water Treatment Project {project}</h3>
-                <p>Industrial water treatment solution</p>
+          <div className="key-services-grid">
+            <Link to="/services/operations-maintenance" className="service-card-link">
+              <div className="key-service-card">
+                <h3>Operations and Maintenance</h3>
+                <p>Comprehensive O&M services for optimal plant performance</p>
               </div>
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link to="/projects" className="btn-primary">
-              View All Projects
+            </Link>
+            <Link to="/services/annual-maintenance-contract" className="service-card-link">
+              <div className="key-service-card">
+                <h3>Annual Maintenance Contract</h3>
+                <p>Comprehensive AMC services for reliable plant operation</p>
+              </div>
+            </Link>
+            <Link to="/services/spares" className="service-card-link">
+              <div className="key-service-card">
+                <h3>Spares</h3>
+                <p>Genuine spare parts and components for water treatment systems</p>
+              </div>
+            </Link>
+            <Link to="/services/consumables-chemicals" className="service-card-link">
+              <div className="key-service-card">
+                <h3>Consumables and Chemicals</h3>
+                <p>High-quality chemicals and consumables for water treatment</p>
+              </div>
             </Link>
           </div>
         </div>

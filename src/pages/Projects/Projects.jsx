@@ -1,75 +1,37 @@
+import { Link } from 'react-router-dom';
 import './Projects.css';
 
 /**
- * Projects Page Component
- * - Responsive gallery of project cards
- * - Placeholder images and project information
+ * Services Page Component
+ * - Displays all key services offered by the company
+ * - Each service card links to its dedicated service page
  */
-function Projects() {
-  // Sample project data - in real app, this would come from an API or database
-  const projects = [
+function Services() {
+  // Service data - the four key services
+  const services = [
     {
       id: 1,
-      title: 'Industrial ETP Project - Delhi',
-      type: 'ETP Plant',
-      capacity: '500 KLD',
-      industry: 'Pharmaceutical'
+      name: 'Operations and Maintenance',
+      description: 'Comprehensive O&M services for optimal plant performance',
+      route: '/services/operations-maintenance'
     },
     {
       id: 2,
-      title: 'Residential STP Project - Mumbai',
-      type: 'STP Plant',
-      capacity: '200 KLD',
-      industry: 'Residential'
+      name: 'Annual Maintenance Contract',
+      description: 'Comprehensive AMC services for reliable plant operation',
+      route: '/services/annual-maintenance-contract'
     },
     {
       id: 3,
-      title: 'Commercial RO Plant - Bangalore',
-      type: 'RO Plant',
-      capacity: '1000 LPH',
-      industry: 'Hospitality'
+      name: 'Spares',
+      description: 'Genuine spare parts and components for water treatment systems',
+      route: '/services/spares'
     },
     {
       id: 4,
-      title: 'Municipal WTP Project - Chennai',
-      type: 'WTP Plant',
-      capacity: '1000 KLD',
-      industry: 'Municipal'
-    },
-    {
-      id: 5,
-      title: 'Textile Industry ETP - Surat',
-      type: 'ETP Plant',
-      capacity: '800 KLD',
-      industry: 'Textile'
-    },
-    {
-      id: 6,
-      title: 'Hospital STP Project - Pune',
-      type: 'STP Plant',
-      capacity: '150 KLD',
-      industry: 'Healthcare'
-    },
-    {
-      id: 7,
-      title: 'Food Processing WTP - Hyderabad',
-      type: 'WTP Plant',
-      capacity: '300 KLD',
-      industry: 'Food & Beverage'
-    },
-    {
-      id: 8,
-      title: 'Automobile Industry RO - Gurgaon',
-      type: 'RO Plant',
-      capacity: '2000 LPH',
-      industry: 'Automobile'
-    },
-    {
-      id: 9,
-      title: 'Educational Institution STP - Kolkata',
-      type: 'STP Plant',
-      capacity: '100 KLD',
-      industry: 'Education'
+      name: 'Consumables and Chemicals',
+      description: 'High-quality chemicals and consumables for water treatment',
+      route: '/services/consumables-chemicals'
     }
   ];
 
@@ -77,9 +39,9 @@ function Projects() {
     <div className="projects">
       <div className="projects-hero">
         <div className="container">
-          <h1>Our Projects</h1>
+          <h1>Our Services</h1>
           <p className="projects-hero-subtitle">
-            Delivering successful water treatment solutions across India
+            Comprehensive support services for your water treatment systems
           </p>
         </div>
       </div>
@@ -88,9 +50,9 @@ function Projects() {
         <div className="container">
           <div className="projects-intro">
             <p>
-              We have successfully completed numerous water and wastewater treatment projects 
-              across various industries and regions in India. Our projects demonstrate our 
-              commitment to quality, innovation, and customer satisfaction.
+              We provide comprehensive support services to ensure your water and wastewater 
+              treatment plants operate at peak efficiency. Our experienced team offers 
+              maintenance, spare parts, and consumables to keep your systems running smoothly.
             </p>
           </div>
         </div>
@@ -99,44 +61,16 @@ function Projects() {
       <section className="section projects-gallery-section">
         <div className="container">
           <div className="projects-grid">
-            {projects.map((project) => (
-              <div key={project.id} className="project-card">
-                <div className="project-image-placeholder">
-                  <span>{project.type}</span>
-                </div>
-                <div className="project-info">
-                  <h3>{project.title}</h3>
-                  <div className="project-details">
-                    <p><strong>Type:</strong> {project.type}</p>
-                    <p><strong>Capacity:</strong> {project.capacity}</p>
-                    <p><strong>Industry:</strong> {project.industry}</p>
+            {services.map((service) => (
+              <Link key={service.id} to={service.route} className="service-card-link">
+                <div className="project-card">
+                  <div className="project-info">
+                    <h3>{service.name}</h3>
+                    <p className="service-description">{service.description}</p>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section stats-section">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat-item">
-              <h2>1800+</h2>
-              <p>Projects Completed</p>
-            </div>
-            <div className="stat-item">
-              <h2>475+</h2>
-              <p>STP Plants</p>
-            </div>
-            <div className="stat-item">
-              <h2>750+</h2>
-              <p>ETP Plants</p>
-            </div>
-            <div className="stat-item">
-              <h2>395+</h2>
-              <p>RO Plants</p>
-            </div>
           </div>
         </div>
       </section>
@@ -144,5 +78,5 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default Services;
 

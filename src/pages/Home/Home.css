@@ -314,8 +314,8 @@
   transform: translateY(-2px);
 }
 
-/* Projects Preview Section */
-.projects-preview-section {
+/* Our Key Services Section */
+.key-services-section {
   background-color: var(--white);
   background-image: linear-gradient(
     to bottom,
@@ -324,72 +324,46 @@
   );
 }
 
-.projects-preview-grid {
+.key-services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-md);
   margin-top: var(--spacing-lg);
 }
 
-.project-preview-card {
-  background-color: var(--light-gray);
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.key-service-card {
+  background-color: var(--white);
   border-radius: 8px;
-  overflow: hidden;
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
-}
-
-.project-preview-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.project-image-placeholder {
-  width: 100%;
-  height: 200px;
-  /* Use actual project images - placeholder for now */
-  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  border: 2px solid transparent;
+  height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  color: var(--white);
-  font-size: 1.5rem;
-  font-weight: 500;
-  position: relative;
 }
 
-/* Dark overlay on project images for text readability */
-.project-image-placeholder::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(30, 58, 138, 0.7),
-    rgba(59, 130, 246, 0.7)
-  );
-  z-index: 1;
+.key-service-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-blue);
 }
 
-.project-image-placeholder span {
-  position: relative;
-  z-index: 2; /* Text above overlay */
-}
-
-.project-preview-card h3 {
-  padding: var(--spacing-sm);
+.key-service-card h3 {
   color: var(--primary-blue);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-sm);
 }
 
-.project-preview-card p {
-  padding: 0 var(--spacing-sm) var(--spacing-sm);
+.key-service-card p {
   color: var(--text-light);
+  line-height: 1.6;
 }
 
 /* Hero Slider Indicators (Dots) - Right Side */
@@ -492,12 +466,8 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
-  .projects-preview-grid {
+  .key-services-grid {
     grid-template-columns: 1fr;
-  }
-
-  .project-image-placeholder {
-    height: 180px; /* Smaller on mobile */
   }
 }
 

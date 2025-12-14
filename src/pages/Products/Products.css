@@ -1,102 +1,132 @@
-/* Projects Page Styles */
+/* Products Page Styles */
 
-.projects {
+.products {
   padding-top: 80px;
 }
 
-.projects-hero {
+.products-hero {
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
   color: var(--white);
   padding: var(--spacing-xl) 0;
   text-align: center;
 }
 
-.projects-hero h1 {
+.products-hero h1 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
 }
 
-.projects-hero-subtitle {
+.products-hero-subtitle {
   font-size: 1.3rem;
   color: var(--light-blue);
 }
 
-.projects-intro {
+.products-intro {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
 
-.projects-intro p {
+.products-intro p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-dark);
 }
 
-.projects-gallery-section {
+.products-gallery-section {
   background-color: var(--light-gray);
 }
 
-.projects-grid {
+.products-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--spacing-md);
 }
 
-.service-card-link {
+.product-card-link {
   text-decoration: none;
   color: inherit;
 }
 
-.project-card {
+.product-card {
   background-color: var(--white);
   border-radius: 8px;
-  padding: var(--spacing-lg);
+  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
   border: 2px solid transparent;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.project-card:hover {
-  transform: scale(1.02);
+.product-card:hover {
+  transform: translateY(-5px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   border-color: var(--primary-blue);
 }
 
-.project-info {
-  padding: 0;
+.product-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
 }
 
-.project-info h3 {
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: var(--spacing-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h3 {
   font-size: 1.3rem;
   color: var(--primary-blue);
   margin-bottom: var(--spacing-sm);
 }
 
-.service-description {
+.product-description {
   color: var(--text-light);
   line-height: 1.6;
   margin: 0;
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
-  .projects-hero h1 {
+  .products-hero h1 {
     font-size: 2rem;
   }
 
-  .projects-hero-subtitle {
+  .products-hero-subtitle {
     font-size: 1.1rem;
   }
 
-  .projects-grid {
+  .products-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    height: 180px;
   }
 }
 

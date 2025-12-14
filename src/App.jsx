@@ -8,7 +8,8 @@ import STP from './pages/Products/STP';
 import ETP from './pages/Products/ETP';
 import WTP from './pages/Products/WTP';
 import RO from './pages/Products/RO';
-import Projects from './pages/Projects';
+import Services from './pages/Projects/Projects';
+import Products from './pages/Products/Products';
 import Contact from './pages/Contact';
 // New product pages
 import SewageTreatmentPlant from './pages/Products/SewageTreatmentPlant';
@@ -53,7 +54,8 @@ function App() {
             <Route path="/solutions/etp" element={<ETP />} />
             <Route path="/solutions/wtp" element={<WTP />} />
             <Route path="/solutions/ro" element={<RO />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/products" element={<Products />} />
             {/* New product routes */}
             <Route path="/products/sewage-treatment-plant" element={<SewageTreatmentPlant />} />
             <Route path="/products/effluent-treatment-plant" element={<EffluentTreatmentPlant />} />
