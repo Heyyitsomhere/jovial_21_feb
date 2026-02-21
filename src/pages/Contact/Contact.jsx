@@ -116,23 +116,23 @@ function Contact() {
                 <div className="contact-item">
                   <h3>📍 Address</h3>
                   <p>
-                    Plot No. 3, 3rd Floor<br />
-                    100 ft Road, Ghitorni<br />
-                    New Delhi, India - 110030
+                    36 South Anarkali<br />
+                    Som Bazar Main Road ,Krishna Nagar<br />
+                    Delhi= 110051
                   </p>
                 </div>
                 
                 <div className="contact-item">
                   <h3>📞 Phone</h3>
                   <p>
-                    <a href="tel:+918851165175">+91-8851165175</a>
+                    <a href="tel:+919217148601">+91-9217148601</a>
                   </p>
                 </div>
                 
                 <div className="contact-item">
                   <h3>✉️ Email</h3>
                   <p>
-                    <a href="mailto:info@jovialwater.com">info@jovialwater.com</a>
+                    <a href="mailto:Jovialwater@outlook.com">Jovialwater@outlook.com</a>
                   </p>
                 </div>
               </div>

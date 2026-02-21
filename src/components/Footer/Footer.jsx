@@ -72,17 +72,17 @@ function Footer() {
           <div className="footer-contact">
             <p>
               <strong>Address:</strong><br />
-              Plot No. 3, 3rd Floor<br />
-              100 ft Road, Ghitorni<br />
-              New Delhi, India - 110030
+              36 South Anarkali<br />
+              Som Bazar Main Road ,Krishna Nagar<br />
+              Delhi= 110051
             </p>
             <p>
               <strong>Phone:</strong><br />
-              +91-8851165175
+              +91-9217148601
             </p>
             <p>
               <strong>Email:</strong><br />
-              info@jovialwater.com
+              Jovialwater@outlook.com
             </p>
           </div>
         </div>
