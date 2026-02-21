@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import wastewaterImg from '../../assets/wastewaterImg.jpg';
+import { Link, useNavigate } from 'react-router-dom';
+import wastewaterImg from '../../assets/one.jpeg';
+import two from '../../assets/two.jpeg';
+import three from '../../assets/three.jpeg';
 import './Home.css';
 
 
@@ -14,6 +16,8 @@ import './Home.css';
  * - Our Key Services section
  */
 function Home() {
+  const navigate = useNavigate();
+  
   // Array of hero slides - each with image and title
   // Using royalty-free placeholder water/wastewater images - easy to replace later
   const heroSlides = [
@@ -23,11 +27,13 @@ function Home() {
       title: 'Wastewater Solutions'
     },
     {
-      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      // image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      image: two,
       title: 'Water Sustainability'
     },
     {
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      // image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      image: three,
       title: 'End-to-End Water Solutions'
     }
   ];
@@ -51,10 +57,10 @@ function Home() {
     // Auto-slide will continue from the newly selected slide
   };
 
-  // Handle "Enquire Now" button click - scroll to contact or navigate
+  // Handle "Enquire Now" button click - navigate to contact page
   const handleEnquireClick = () => {
-    // Scroll to contact section or navigate to contact page
-    window.location.href = '/contact';
+    // Navigate to contact page using React Router
+    navigate('/contact');
   };
 
   return (

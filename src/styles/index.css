@@ -72,11 +72,12 @@ button {
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.75rem; /* Increased from 2.5rem for better readability */
+  font-weight: 800; /* Increased from 700 for stronger presence */
   color: var(--primary-blue);
   text-align: center;
   margin-bottom: var(--spacing-md);
+  letter-spacing: 0.3px; /* Slight letter spacing for clarity */
 }
 
 .section-subtitle {
@@ -92,7 +93,8 @@ button {
 /* Responsive Typography */
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2rem;
+    font-size: 2.25rem; /* Increased from 2rem for better mobile readability */
+    font-weight: 800;
   }
   
   .section-subtitle {

@@ -48,6 +48,13 @@
   bottom: 0;
   z-index: 1;
   transition: background 1s ease-in-out;
+  /* Subtle dark gradient overlay for better text readability */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 /* Different overlay tones for each slide */
@@ -66,25 +73,41 @@
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 4rem; /* Increased from 3rem for better visibility */
+  font-weight: 800; /* Increased from 700 for stronger presence */
   margin-bottom: var(--spacing-sm);
   line-height: 1.2;
-  color: var(--white); /* Bold white heading */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+  color: #ffffff; /* Pure white for maximum contrast */
+  /* Enhanced text shadow for better readability on any background */
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(0, 0, 0, 0.5),
+    1px 1px 3px rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.5px; /* Slight letter spacing for clarity */
 }
 
 .hero-tagline {
-  font-size: 1.5rem;
+  font-size: 1.75rem; /* Increased from 1.5rem */
+  font-weight: 600; /* Increased weight for better readability */
   margin-bottom: var(--spacing-sm);
-  color: var(--light-blue);
+  color: #ffffff; /* Pure white instead of light-blue for better contrast */
+  /* Enhanced text shadow for readability */
+  text-shadow: 
+    1px 1px 6px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.3px;
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Increased from 1.1rem */
+  font-weight: 400;
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff; /* Pure white instead of rgba for better contrast */
+  /* Subtle text shadow for readability */
+  text-shadow: 
+    1px 1px 4px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Button Styles */
@@ -432,15 +455,17 @@
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Increased from 2rem for better mobile readability */
+    font-weight: 800;
   }
 
   .hero-tagline {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Increased from 1.2rem */
+    font-weight: 600;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 1.1rem; /* Increased from 1rem */
   }
 
   /* Services section adjustments */
@@ -491,6 +516,20 @@
 
   .service-image {
     height: 150px;
+  }
+
+  .hero-title {
+    font-size: 2rem; /* Adjusted for very small screens */
+    font-weight: 800;
+  }
+
+  .hero-tagline {
+    font-size: 1.2rem; /* Adjusted for very small screens */
+    font-weight: 600;
+  }
+
+  .hero-description {
+    font-size: 1rem; /* Adjusted for very small screens */
   }
 }
 

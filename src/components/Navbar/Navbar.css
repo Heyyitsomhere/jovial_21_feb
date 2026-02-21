@@ -55,19 +55,68 @@
 }
 
 .navbar-logo {
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease; /* Smooth hover transition */
+}
+
+.navbar-logo:hover {
+  opacity: 0.9;
+}
+
+.navbar-logo-img {
+  height: 60px; /* Fixed height for logo */
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.navbar-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  gap: 0.1rem;
+}
+
+.brand-name-top {
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--white); /* White text on transparent/semi-transparent background */
-  transition: color 0.3s ease; /* Smooth color transition */
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.brand-name-bottom {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--white); /* White text on transparent/semi-transparent background */
+  opacity: 0.95;
+  transition: color 0.3s ease;
 }
 
 /* Logo color changes when navbar is scrolled */
-.navbar-scrolled .navbar-logo {
+.navbar-scrolled .brand-name-top,
+.navbar-scrolled .brand-name-bottom {
   color: var(--primary-blue); /* Blue text on white background */
 }
 
-.logo-text {
-  white-space: nowrap;
+/* About page navbar - logo text color */
+.navbar-about .brand-name-top,
+.navbar-about .brand-name-bottom {
+  color: var(--primary-blue); /* Dark blue logo on white background */
+}
+
+/* Home page navbar - logo text color to match About page */
+.navbar-home .brand-name-top,
+.navbar-home .brand-name-bottom {
+  color: var(--primary-blue); /* Blue text to match About page */
+}
+
+/* Home page navbar - logo image filter to match blue text styling */
+.navbar-home .navbar-logo-img {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(78%) saturate(3828%) hue-rotate(211deg) brightness(93%) contrast(94%);
+  /* Filter converts logo to primary blue color (#1e3a8a) to match text */
 }
 
 /* Desktop Navigation Menu */
@@ -324,8 +373,16 @@
     display: block; /* Show mobile menu */
   }
 
-  .navbar-logo {
-    font-size: 1.2rem; /* Slightly smaller logo on mobile */
+  .navbar-logo-img {
+    height: 40px; /* Slightly smaller logo on mobile */
+  }
+
+  .brand-name-top {
+    font-size: 1.2rem; /* Slightly smaller text on mobile */
+  }
+
+  .brand-name-bottom {
+    font-size: 0.75rem; /* Slightly smaller text on mobile */
   }
 
   /* Ensure no horizontal scroll on mobile */
@@ -335,8 +392,20 @@
 }
 
 @media (max-width: 480px) {
-  .navbar-logo {
+  .navbar-logo-img {
+    height: 35px; /* Even smaller on very small screens */
+  }
+
+  .brand-name-top {
     font-size: 1rem; /* Even smaller on very small screens */
+  }
+
+  .brand-name-bottom {
+    font-size: 0.7rem; /* Even smaller on very small screens */
+  }
+
+  .navbar-logo {
+    gap: 0.5rem; /* Reduce gap on very small screens */
   }
 
   /* Prevent horizontal scrolling */

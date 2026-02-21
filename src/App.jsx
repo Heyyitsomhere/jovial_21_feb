@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Solutions from './pages/Products/Solutions';
@@ -39,6 +40,7 @@ import './styles/App.css';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         {/* Navbar appears on all pages */}
         <Navbar />

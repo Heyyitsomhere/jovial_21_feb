@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../../assets/logo_2.png';
 import './Navbar.css';
+
+// Logo URL - placeholder from free icon service (easy to replace later)
+// const LOGO_URL = 'https://cdn-icons-png.flaticon.com/512/2933/2933245.png';
+const LOGO_URL = logo;
 
 /**
  * Navbar Component
@@ -17,24 +22,6 @@ function Navbar() {
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
   const location = useLocation();
 
-  // Handle scroll effect - change navbar style when scrolled past 80px
-  // Uses useState and useEffect as per typical React navbar scroll examples
-  useEffect(() => {
-    const handleScroll = () => {
-      // Toggle scrolled state when user scrolls past 80px
-      if (window.scrollY > 80) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-    
-    // Cleanup: remove event listener on component unmount
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -55,15 +42,50 @@ function Navbar() {
     setOpenMobileDropdown(openMobileDropdown === dropdownName ? null : dropdownName);
   };
 
-  // Check if we're on the About page
-  const isAboutPage = location.pathname === '/about';
+  // Check if we're on the Home page (keeps current behavior)
+  const isHomePage = location.pathname === '/';
+  
+  // Check if we're on pages that should have the same navbar behavior as About page
+  // These pages: About, Products (and subroutes), Services (and subroutes), Career, Contact
+  const shouldUseAboutNavbarStyle = 
+    location.pathname === '/about' ||
+    location.pathname.startsWith('/products') ||
+    location.pathname.startsWith('/services') ||
+    location.pathname === '/career' ||
+    location.pathname === '/contact';
+
+  // Disable scroll behavior on pages that use About-style navbar
+  // These pages should always have solid background (no scroll transitions)
+  useEffect(() => {
+    if (shouldUseAboutNavbarStyle) {
+      // Set scrolled to false and disable scroll listener for About-style pages
+      setIsScrolled(false);
+      return; // Don't add scroll listener
+    }
+
+    // Only add scroll listener on Home page
+    const handleScroll = () => {
+      if (window.scrollY > 80) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [shouldUseAboutNavbarStyle]);
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${isAboutPage ? 'navbar-about' : ''}`}>
+    <nav className={`navbar ${isScrolled && !shouldUseAboutNavbarStyle ? 'navbar-scrolled' : ''} ${shouldUseAboutNavbarStyle ? 'navbar-about' : ''} ${isHomePage ? 'navbar-home' : ''}`}>
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/" className="navbar-logo">
-          <span className="logo-text">Jovial Water Technologies</span>
+          <img src={logo} alt="Jovial Water Technologies Logo" className="navbar-logo-img" />
+          <div className="navbar-brand-text">
+            <span className="brand-name-top">JOVIAL</span>
+            <span className="brand-name-bottom">Water Technologies</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
